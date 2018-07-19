@@ -102,11 +102,7 @@ public final class HomeController {
         );
     }
 
-    /**
-     * Перенаправляет на страницу с заказами для администратора.
-     *
-     * @return Объект класса {@link ModelAndView}.
-     */
+   
     @RequestMapping(
             value = { "/admin", "/admin/" },
             method = RequestMethod.GET

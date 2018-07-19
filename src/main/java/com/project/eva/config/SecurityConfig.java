@@ -10,20 +10,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
-/**
- * Класс настройки безопасности Spring Security.
- * Класс расширяет класс WebSecurityConfigurerAdapter.
- * Аннотация @EnableWebSecurity в связке с WebSecurityConfigurerAdapter классом
- * работает над обеспечением аутентификации.
- * Помечен аннотацией @ComponentScan - указываем фреймворку Spring, что компоненты надо
- * искать внутри пакетов "com.project.eva.service" .
- *
 
- * @version 1.2
- * @see UserDetailsService
- * @see User
- * @see SecurityInitializer
- */
 @Configuration
 @EnableWebSecurity
 @ComponentScan(basePackages = "com.project.eva.service")

@@ -49,12 +49,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     @Value("${login.view}")
     private String loginView;
 
-    /**
-     * Указывает Spring'у где находятся компоненты представления, и как их отображать.
-     * Вьюшкибудут лежать в директории /WEB-INF/views/ и иметь разширение *.jsp.
-     *
-     * @return Реализация интерфейса ViewResolver с настройками для вьюшек.
-     */
+    
     @Bean
     public ViewResolver viewResolver() {
         final InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
@@ -66,25 +61,14 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         return viewResolver;
     }
 
-    /**
-     * Указывает где будут хранится ресурсы.
-     *
-     * @param resource Объект класса ResourceHandlerRegistry с настройками для ресурсов.
-     */
+
     @Override
     public void addResourceHandlers(final ResourceHandlerRegistry resource) {
         resource.addResourceHandler(this.resourcesUrl)
                 .addResourceLocations(this.resourcesLocation);
     }
 
-    /**
-     * Настройка логин-контроллера.
-     * Оказывает помощь в регистрации простого автоматизированного
-     * логин-контроллера предварительно сконфигурированных с кодом
-     * состояния и вьюшкой.
-     *
-     * @param viewController Объект класса ViewControllerRegistry.
-     */
+    
     @Override
     public void addViewControllers(final ViewControllerRegistry viewController) {
         viewController.addViewController(this.loginUrl).setViewName(this.loginView);

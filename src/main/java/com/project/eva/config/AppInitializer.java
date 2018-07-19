@@ -11,22 +11,13 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 
 public class AppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
-    /**
-     * Возвращает конфигурацию, в которой инициализируем ViewResolver.
-     *
-     * @return Массив объектов класса Class - класс с настройками {@link WebConfig}.
-     */
+    
     @Override
     protected Class<?>[] getServletConfigClasses() {
         return new Class<?>[] { WebConfig.class };
     }
 
-    /**
-     * Возвращает конфигурации, которые инициализируют Beans.
-     *
-     * @return Массив объектов класса Class - класс с настройками
-     * {@link RootConfig} и {@link SecurityConfig}.
-     */
+    
     @Override
     protected Class<?>[] getRootConfigClasses() {
         return new Class<?>[] {
@@ -36,24 +27,13 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
         };
     }
 
-    /**
-     * Настроили мэпинг сервлета на "/" и поэтому все запросы будут
-     * перехвачены Диспетчером Сервлета Spring.
-     *
-     * @return Массив типа String.
-     */
+   
     @Override
     protected String[] getServletMappings() {
         return new String[] { "/" };
     }
 
-    /**
-     * Настройка ссесии.
-     *
-     * @param servletContext Реализация интерфейса ServletContext.
-     * @throws ServletException Исключении выбрасывают методы класса
-     *                          AbstractAnnotationConfigDispatcherServletInitializer.
-     */
+    
     @Override
     public void onStartup(final ServletContext servletContext) throws ServletException {
         super.onStartup(servletContext);
@@ -64,12 +44,7 @@ public class AppInitializer extends AbstractAnnotationConfigDispatcherServletIni
         dynamic.addMappingForUrlPatterns(null, true, "/*");
     }
 
-    /**
-     * Включение исключений NoHandlerFound.
-     *
-     * @param context Реализация инерфейса WebApplicationContext.
-     * @return Объект класса DispatcherServlet.
-     */
+  
     @Override
     protected DispatcherServlet createDispatcherServlet(final WebApplicationContext context) {
         final DispatcherServlet dispatcherServlet =

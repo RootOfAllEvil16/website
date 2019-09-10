@@ -6,6 +6,8 @@ Used technologies: Java EE, Maven, Servlets, Spring Framework (IoC, MVC, Data, S
 
 Don`t forget to create your own database and change properties and DatabaseConfig class. Enjoy
 
-Working website: http://209.97.176.247:8080/eva/
+Website TEMPORARY AVAILABLE: http://209.97.176.247:8080/eva/
+
+#Project updating
 
 
